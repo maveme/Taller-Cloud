@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  identification: MyString
+  birthDate: 2014-08-22 16:03:28
+  principal: 1.5
+  numberOfPayments: 1
+  state: MyString
+  riskLevel: 1.5
+  CreditLine: 
+  admin: 
+
+two:
+  identification: MyString
+  birthDate: 2014-08-22 16:03:28
+  principal: 1.5
+  numberOfPayments: 1
+  state: MyString
+  riskLevel: 1.5
+  CreditLine: 
+  admin: 

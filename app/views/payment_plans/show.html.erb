@@ -1,0 +1,85 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @payment_plan.id %>
+</p>
+
+<p>
+  <b>Identification:</b>
+  <%= @payment_plan.identification %>
+</p>
+
+<p>
+  <b>Birthdate:</b>
+  <%= @payment_plan.birthDate %>
+</p>
+
+<p>
+  <b>Principal:</b>
+  <%= @payment_plan.principal %>
+</p>
+
+<p>
+  <b>Numberofpayments:</b>
+  <%= @payment_plan.numberOfPayments %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @payment_plan.state %>
+</p>
+
+<p>
+  <b>Risklevel:</b>
+  <%= @payment_plan.riskLevel %>
+</p>
+
+
+<p>
+  <b>Creditline:</b>
+  <%= CreditLine.find(@payment_plan.CreditLine_id).name%>
+</p>
+
+<p>
+  <b>Admin:</b>
+  <%= @payment_plan.admin.name %>
+</p>
+
+<% if @payment_plan.state !='In progress'%>
+    <!-- Se Pintan los planes de pagos-->
+
+    <h1>Listing payments</h1>
+
+    <table>
+      <tr>
+        <th>Paymentnumber</th>
+        <th>Paymentinterest</th>
+        <th>Paymentamortization</th>
+        <th>Pendingbalance</th>
+        <th>Totalpayment</th>
+      </tr>
+
+      <% @payments.each do |payment| %>
+          <tr>
+            <td><%= payment.paymentNumber %></td>
+            <td><%= payment.paymentInterest %></td>
+            <td><%= payment.paymentAmortization %></td>
+            <td><%= payment.pendingBalance %></td>
+            <td><%= payment.totalPayment %></td>
+          </tr>
+      <% end %>
+    </table>
+
+    <br />
+
+    <%= link_to 'Back', :back %>
+
+<% else%>
+    <p>
+      <b>Message:</b>
+      Your payment plan is in process, please wait
+    </p>
+    <%= link_to 'Refresh', @payment_plan %>
+<% end%>
+

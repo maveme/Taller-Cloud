@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @credit_line.name %>
+</p>
+
+<p>
+  <b>Interest rate:</b>
+  <%= @credit_line.interest_rate %>
+</p>
+
+
+<%= link_to 'Edit', edit_credit_line_path(@credit_line) %> |
+<%= link_to 'Back', credit_lines_path %>

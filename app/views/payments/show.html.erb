@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Paymentnumber:</b>
+  <%= @payment.paymentNumber %>
+</p>
+
+<p>
+  <b>Paymentinterest:</b>
+  <%= @payment.paymentInterest %>
+</p>
+
+<p>
+  <b>Paymentamortization:</b>
+  <%= @payment.paymentAmortization %>
+</p>
+
+<p>
+  <b>Pendingbalance:</b>
+  <%= @payment.pendingBalance %>
+</p>
+
+<p>
+  <b>Totalpayment:</b>
+  <%= @payment.totalPayment %>
+</p>
+
+<p>
+  <b>Payment plan:</b>
+  <%= @payment.payment_plan %>
+</p>
+
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

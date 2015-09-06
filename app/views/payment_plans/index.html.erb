@@ -1,0 +1,37 @@
+<h1>Listing payment_plans</h1>
+
+<table>
+  <tr>
+    <th>Identification</th>
+    <th>Birthdate</th>
+    <th>Principal</th>
+    <th>Numberofpayments</th>
+    <th>State</th>
+    <th>Risklevel</th>
+    <th>Creditline</th>
+    <th>Admin</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @payment_plans.each do |payment_plan| %>
+  <tr>
+    <td><%= payment_plan.identification %></td>
+    <td><%= payment_plan.birthDate %></td>
+    <td><%= payment_plan.principal %></td>
+    <td><%= payment_plan.numberOfPayments %></td>
+    <td><%= payment_plan.state %></td>
+    <td><%= payment_plan.riskLevel %></td>
+    <td><%= payment_plan.CreditLine %></td>
+    <td><%= payment_plan.admin %></td>
+    <td><%= link_to 'Show', payment_plan %></td>
+    <td><%= link_to 'Edit', edit_payment_plan_path(payment_plan) %></td>
+    <td><%= link_to 'Destroy', payment_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Payment plan', new_payment_plan_path %>

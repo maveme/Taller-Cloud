@@ -1,0 +1,40 @@
+<%= form_for(@payment_plan) do |f| %>
+  <% if @payment_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@payment_plan.errors.count, "error") %> prohibited this payment_plan from being saved:</h2>
+
+      <ul>
+      <% @payment_plan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :identification %><br />
+    <%= f.text_field :identification %>
+  </div>
+  <div class="field">
+    <%= f.label :birthDate %><br />
+    <%= f.date_select :birthDate %>
+  </div>
+  <div class="field">
+    <%= f.label :principal %><br />
+    <%= f.text_field :principal %>
+  </div>
+  <div class="field">
+    <%= f.label :numberOfPayments %><br />
+    <%= f.number_field :numberOfPayments %>
+  </div>
+
+  <div class="field">
+    <%= f.label :credit_line %><br />
+
+    <%= f.select :credit_line, options_from_collection_for_select(@creditLines,"id","name") %>
+    <!--options_from_collection_for_select(@creditLines,"id","name")-->
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  paymentNumber: 1
+  paymentInterest: 1.5
+  paymentAmortization: 1.5
+  pendingBalance: 1.5
+  totalPayment: 1.5
+  payment_plan: 
+
+two:
+  paymentNumber: 1
+  paymentInterest: 1.5
+  paymentAmortization: 1.5
+  pendingBalance: 1.5
+  totalPayment: 1.5
+  payment_plan: 

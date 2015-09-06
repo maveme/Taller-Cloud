@@ -1,0 +1,64 @@
+<h1>Listing Credit lines From <%=current_admin.pymeName%></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Interest rate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @credit_lines.each do |credit_line| %>
+  <tr>
+    <td><%= credit_line.name %></td>
+    <td><%= credit_line.interest_rate %></td>
+    <td><%= link_to 'Show', credit_line %></td>
+    <td><%= link_to 'Edit', edit_credit_line_path(credit_line) %></td>
+    <td><%= link_to 'Destroy', credit_line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<table>
+  <tr>
+    <th>Identification</th>
+    <th>Birthdate</th>
+    <th>Principal</th>
+    <th>Number of Payments</th>
+    <th>Risk Level</th>
+    <th>Credit Line</th>
+    <th>Created At</th>
+    <th>Updated At</th>
+    <th>State</th>
+    <th></th>
+  </tr>
+
+  <h1>Listing Payment Plans</h1>
+  <% @payment_plans.each do |payment_plan| %>
+      <tr>
+        <td><%= payment_plan.identification%></td>
+        <td><%= payment_plan.birthDate%></td>
+        <td><%= payment_plan.principal%></td>
+        <td><%= payment_plan.numberOfPayments%></td>
+        <td><%= payment_plan.riskLevel%></td>
+        <td><%= CreditLine.find(payment_plan.CreditLine_id).name%></td>
+        <td><%= payment_plan.created_at%></td>
+        <td><%= payment_plan.updated_at%></td>
+        <td><%= payment_plan.state%></td>
+        <td><%= link_to 'View details', payment_plan %></td>
+      </tr>
+  <% end %>
+  <%= will_paginate @payment_plans %>
+</table>
+
+
+
+
+
+
+<%= link_to 'New Credit line', new_credit_line_path %>
+<br/>
+<%= link_to 'Public url: /pyme/'.concat("#{current_admin.pymeName}"), "/pyme/#{current_admin.pymeName}" %>

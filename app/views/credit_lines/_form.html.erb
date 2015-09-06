@@ -1,0 +1,54 @@
+<%if @edit.nil? %>
+<%= form_for([@admin, @admin.credit_lines.build]) do |f| %>
+  <% if @credit_line.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@credit_line.errors.count, "error") %> prohibited this credit_line from being saved:</h2>
+
+      <ul>
+      <% @credit_line.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :interest_rate %><br />
+    <%= f.text_field :interest_rate %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<% else %>
+
+    <%= form_for @credit_line do |f| %>
+        <% if @credit_line.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@credit_line.errors.count, "error") %> prohibited this credit_line from being saved:</h2>
+
+              <ul>
+                <% @credit_line.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+        <div class="field">
+          <%= f.label :name %><br />
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <%= f.label :interest_rate %><br />
+          <%= f.text_field :interest_rate %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+    <% end %>
+<% end %>
