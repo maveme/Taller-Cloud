@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-#every 1.minute do
-#  runner "PaymentPlansController.calculation", environment: 'production'
-#end
+every 1.minute do
+  runner "PaymentPlansController.calculation", environment: 'development'
+end
